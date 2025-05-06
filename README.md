@@ -2,6 +2,7 @@
 
 An end-to-end data engineering pipeline built on Databricks using PySpark, Delta Lake, and Hive Metastore. This project ingests news articles from an API, performs data quality checks, applies sentiment analysis, models the data into fact/dim structures, and exposes clean gold-layer datasets for analytics.
 
+
 ---
 
 ## 📽️ Watch the Demo
@@ -14,6 +15,12 @@ An end-to-end data engineering pipeline built on Databricks using PySpark, Delta
 ```bash
     API → Bronze (Raw Delta) → DQ Checks & Quarantine → Silver (Clean, Enriched) → Gold (Fact/Dim Model) → Hive Metastore → BI Tools
 ```
+
+<p align="center">
+  <img src="docs/pipeline_architecture.jpg" width="600" alt="News Data Pipeline Architecture"/>
+  <br/>
+  <em>Figure: Medallion Architecture for News Ingestion and Analysis</em>
+</p>
 
 ----
 
@@ -44,10 +51,10 @@ An end-to-end data engineering pipeline built on Databricks using PySpark, Delta
 ## 🚀 How to Run
 
 1. Clone repo & open in Databricks  
-2. Run `01_ingest_bronze_news_api` to pull from API  
-3. Run `02_bronze_to_silver_with_dq` for cleaning + DQ  
-4. Run `03_silver_to_gold_modeling` to build gold model  
-5. Use `04_visualize_gold_tables` to explore results  
+2. Run `01_bronze_ingestion_news_articles` to pull from API  
+3. Run `02_silver_transformation_news_articles` for cleaning + DQ + sentiment analysis 
+4. Run `03_gold_modeling_news_articles` to build gold model  
+5. Use `_lib_dq_helpers` reusable functions   
 
 ---
 
@@ -66,8 +73,6 @@ MIT License
 ---
 
 ## 🙌 Credits
-Built by **[Your Name]** with ❤️ on Databricks
+Built by **[David Ezekiel]** with ❤️ on Databricks
 
----
 
-> 📝 Replace `YOUR_VIDEO_ID` with your actual YouTube video ID to embed the preview.
